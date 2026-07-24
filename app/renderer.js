@@ -152,6 +152,8 @@ async function attachFiles() {
   if (!files.length) return;
   state.editing.attachments = [...(state.editing.attachments || []), ...files];
   renderAttachments();
+  $('saveBtn').classList.remove("no-active");
+  $('changed').textContent = '*';
 }
 
 // --- Web search ---
