@@ -22,6 +22,21 @@
 
 ![](IMG/5.png)
 
+### Как собрать
+
+```bash
+git clone https://github.com/codmlifer/T-Notes.git
+cd "T-Notes"
+npm install
+```
+Для запуска в дев-режиме:
+```bash
+npm start
+```
+Сборка приложения:
+```bash
+npm run build-win64
+```
 
 
 ## [EN]
@@ -46,3 +61,19 @@ The app features a built-in browser, allowing you to find and save information w
 Clicking on a search result opens the full website.
 
 ![](IMG/5.png)
+
+### How to build
+
+```bash
+git clone https://github.com/codmlifer/T-Notes.git
+cd "T-Notes"
+npm install
+```
+To run in dev mode:
+```bash
+npm start
+```
+To build the application:
+```bash
+npm run build-win64
+```
