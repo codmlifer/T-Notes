@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>T-Notes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="topBar" class="top-bar">
+    <img src="../icon.ico" alt="Logo" class="tab-logo" />
+    <span class="tab-title">T-Notes app</span>
+    <button id="minimizeBtn" class="btn ghost">—</button>
+    <button id="maximizeBtn" class="btn ghost">□</button>
+    <button id="closeBtn" class="btn ghost">×</button>
+  </div>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">📝</div>
+      <div>
+        <h1>T-Notes</h1>
+        <p id="storageBadge" class="muted">—</p>
+      </div>
+    </div>
+
+    <button id="newNoteBtn" class="btn primary">＋ New Note</button>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="local">My Notes</button>
+      <button class="tab" data-tab="web">Search Web</button>
+    </div>
+
+    <div class="search-wrap">
+      <input id="searchInput" type="search" placeholder="Search..." />
+    </div>
+
+    <div id="notesList" class="notes-list"></div>
+    <div id="webList" class="notes-list hidden"></div>
+
+    <button id="settingsBtn" class="btn ghost bottom">⚙ Settings</button>
+  </aside>
+
+  <main class="editor" id="editor">
+    <div class="empty" id="emptyState">
+      <div class="empty-icon">📄</div>
+      <p>Choose a note or <a id="newNoteA" href="#">create a new one</a></p>
+    </div>
+
+    <div class="editor-inner hidden" id="editorInner">
+      <div class="title">
+        <span id="changed"></span>
+        <input id="noteTitle" class="title-input" placeholder="Title..." />
+      </div>
+      <div class="editor-meta">
+        <span id="noteMeta" class="muted"></span>
+        <div class="actions">
+          <button id="attachBtn" class="btn">📎 Add File/Photo</button>
+          <button id="saveBtn" class="btn primary no-active">💾 Save</button>
+          <button id="deleteBtn" class="btn danger">🗑 Delete</button>
+        </div>
+      </div>
+      <textarea id="noteContent" class="content-input" placeholder="Your text..."></textarea>
+      <div id="attachments" class="attachments"></div>
+    </div>
+  </main>
+
+  <!-- Settings modal -->
+  <div id="settingsModal" class="modal hidden">
+    <div class="modal-body">
+      <h2>Settings</h2>
+      <p>Choose a storage method for your notes:</p>
+      <label class="option">
+        <input type="radio" name="storage" value="file" /> File (simple JSON)
+      </label>
+      <label class="option">
+        <input type="radio" name="storage" value="db" /> Database (JSON with index for fast search)
+      </label>
+      <p class="muted small" id="storagePath"></p>
+      <div class="modal-actions">
+        <button id="settingsCancel" class="btn">Cancel</button>
+        <button id="settingsSave" class="btn primary">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

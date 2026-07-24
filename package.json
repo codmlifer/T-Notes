@@ -1,0 +1,24 @@
+{
+  "name": "T-Notes",
+  "productName": "T-Notes",
+  "description": "T-Notes is a simple and efficient note-taking application built with Electron. It allows users to create, edit, and organize their notes seamlessly across different platforms.",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "CodmLifer",
+  "scripts": {
+    "start": "electron .",
+    "build-all": "electron-builder --ia32 --x64 -w && C: && dir/s",
+    "build-win32": "electron-builder --ia32 -w",
+    "build-win64": "electron-builder --x64 -w"
+  },
+  "dependencies": {
+    "@electron/remote": "2.0.9",
+    "jquery": "^4.0.0",
+    "playwright": "^1.35.1"
+  },
+  "devDependencies": {
+    "electron": "22.1.0",
+    "electron-builder": "^26.15.3"
+  }
+}
